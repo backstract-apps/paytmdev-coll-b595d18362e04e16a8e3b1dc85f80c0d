@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d-depl
+  labels:
+    app: paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d
+  template:
+    metadata:
+      labels:
+        app: paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d
+    spec:
+      containers:
+        - name: paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:paytmdev-coll-b595d18362e04e16a8e3b1dc85f80c0d
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9064
